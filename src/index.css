@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    color: white;
+}
+
+
+.home-bg{
+    position: fixed;
+    z-index: 0;
+    inset: auto;
+    height: 100dvh;
+    width: 100dvw;
+    background-image: url('https://images7.alphacoders.com/111/1119551.jpg');
+    background-size: cover;
+}
