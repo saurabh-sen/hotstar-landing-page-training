@@ -35,7 +35,6 @@ const SignIn = () => {
   useEffect(() => {
     const checkAuthentication = () => {
       try {
-        alert("signin " + getCookie("email"))
         if (getCookie("email")) {
           navigate("/");
           return;
