@@ -33,8 +33,9 @@ const SignIn = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const checkAuthentication = async () => {
+    const checkAuthentication = () => {
       try {
+        alert("signin " + getCookie("email"))
         if (getCookie("email")) {
           navigate("/");
           return;

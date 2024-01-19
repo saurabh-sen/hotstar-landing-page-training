@@ -15,7 +15,6 @@ const validateSignUpInput = (
   const isNameValid = nameRegex.test(name);
   const isEmailValid = emailRegex.test(email);
   const isPasswordValid = passwordRegex.test(password);
-  const isConfirmPasswordValid = passwordRegex.test(confirmPassword);
 
   if (!isNameValid) {
     toast.error("Name is not valid");
@@ -28,12 +27,6 @@ const validateSignUpInput = (
   if (!isPasswordValid) {
     toast.error(
       "Password should have minimum 8 chars including 1 uppercase, 1 lowercase and 1 special character."
-    );
-    return false;
-  }
-  if (!isConfirmPasswordValid) {
-    toast.error(
-      "Confirm Password should have minimum 8 chars including 1 uppercase, 1 lowercase and 1 special character."
     );
     return false;
   }

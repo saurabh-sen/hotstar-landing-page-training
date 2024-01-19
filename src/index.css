@@ -2,17 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     color: white;
 }
 
+.hero-bg {
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0% , rgba(0, 0, 0, 0) 50%, rgba(8, 7, 31, 0.62) 100%), center/cover;
+}
 
-.home-bg{
-    position: fixed;
-    z-index: 0;
-    inset: auto;
-    height: 100dvh;
-    width: 100dvw;
-    background-image: url('https://images7.alphacoders.com/111/1119551.jpg');
-    background-size: cover;
+.home-bg {
+    /* height: 100dvh; */
+    background: linear-gradient(90deg, rgb(8, 7, 31) 0%, rgba(8, 7, 31, 0.116) 50%, rgba(8, 7, 31, 0.62) 100%), center/cover;
+}
+
+.sidebar {
+    background: linear-gradient(90deg, rgb(8, 7, 31) 0%, rgba(8, 7, 31, 0.233) 90%, rgba(8, 7, 31, 0) 100%);
 }

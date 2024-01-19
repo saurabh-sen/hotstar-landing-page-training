@@ -26,7 +26,7 @@ const Sidebar = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <aside className="fixed top-0 left-0 py-10 px-2 bg-gradient-to-r from-gray-900 to-transparent h-screen w-48">
+    <aside className="sidebar fixed z-40 top-0 left-0 py-10 px-2 h-screen transition-all w-32 hover:w-80">
       <Link to='/' className="flex gap-2 flex-col items-center w-min">
         <Dlogo />
         <span className="text-xs px-3 py-1 rounded-full flex items-center gap-1 font-semibold bg-yellow-400 bg-opacity-10">
@@ -36,7 +36,7 @@ const Sidebar = () => {
       </Link>
       <div className="sidebar__list flex flex-col gap-6 py-8 pl-8" onMouseEnter={() => setIsVisible(true)} onMouseLeave={() => setIsVisible(false)}>
         {
-          sidebarList.map((item, i) => <SidebarItem isVisible={isVisible} key={i} Icon={item.Icon} title={item.title} />)
+          sidebarList.map((item, i) => <SidebarItem isVisible={isVisible} active={i === 2} key={i} Icon={item.Icon} title={item.title} />)
         }
       </div>
     </aside>
@@ -47,13 +47,14 @@ interface ISidebarItem {
   Icon: IconType;
   title: string;
   isVisible: boolean;
+  active: boolean;
 }
 
-export function SidebarItem({ Icon, title, isVisible }: ISidebarItem) {
+export function SidebarItem({ Icon, title, isVisible, active }: ISidebarItem) {
 
   return (
-    <Link to="#" className="flex justify-start items-center text-xl font-semibold transition-all hover:scale-110 hover:translate-x-3 group">
-      <Icon className="opacity-60 group-hover:opacity-100 text-2xl" />
+    <Link to="#" className="flex justify-start items-center text-xl font-semibold transition-all hover:scale-110 hover:translate-x-3 hover:shadow-[-1px_2px_194px_60px_rgba(255, 255, 255, 1)] group">
+      <Icon className={` ${active ? 'opacity-100' : 'opacity-60'} group-hover:opacity-100 text-xl `} />
       <p className={`text-gray-300 group-hover:text-gray-100 group-hover:font-bold transition-all pb-1 ${isVisible ? 'opacity-100 translate-x-3' : '-translate-x opacity-0'}`}>{title}</p>
     </Link>
   )

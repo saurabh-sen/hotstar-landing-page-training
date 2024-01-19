@@ -25,7 +25,7 @@ const checkCred = (emailClient: string, passwordClient: string) => {
 
       const userData = localStorage.getItem('user');
       if(!userData){
-        rej('Something went wrong')
+        rej('Please Signup first')
         return;
       }
       const {email, password} = JSON.parse(userData);
